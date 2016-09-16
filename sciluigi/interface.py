@@ -13,14 +13,14 @@ LOGFMT_LUIGI = '%(asctime)s %(levelname)8s    LUIGI %(message)s'
 LOGFMT_SCILUIGI = '%(asctime)s %(levelname)8s SCILUIGI %(message)s'
 DATEFMT = '%Y-%m-%d %H:%M:%S'
 
-class SciluigiInterface(luigi.Config):
+class SciLuigi(luigi.Config):
     logdir = luigi.Parameter(default="log")
 
 def setup_logging():
     '''
     Set up SciLuigi specific logging
     '''
-    logdir = SciluigiInterface().logdir
+    logdir = SciLuigi().logdir
     sciluigi.util.ensuredir(logdir)
     log_path = os.path.join(logdir, 'sciluigi_run_%s_detailed.log' % sciluigi.util.timepath())
 

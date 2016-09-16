@@ -81,8 +81,5 @@ class TestMultiInOutWorkflow(unittest.TestCase):
         for p in ['/tmp/out_%s_%d.txt.daa.txt' % (aid, i) for i in xrange(10) for aid in ['x']]:
             os.remove(p)
 
-    def tearDown(self):
-        self.w.stop()
-
 if __name__ == '__main__':
     unittest.main()
